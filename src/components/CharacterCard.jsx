@@ -9,8 +9,10 @@ function CharacterCard({character}) { // character est la const qui recup toutes
         </div>
         <div>
             <h1>
-                {character.name + " " + character.status}
+                {character.name}
             </h1>
+            <p>{character.status}</p>
+            <p>{character.species}</p>
         </div>
 
     </div>
