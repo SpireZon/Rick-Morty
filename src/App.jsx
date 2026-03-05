@@ -5,15 +5,18 @@ import { useFetch } from './hooks/usefetch'
 
 
 function App() {
-  const apiUrl = "https://rickandmortyapi.com/api/character/1"
-  const {data,loading} = useFetch(apiUrl)
+  const apiUrl = "https://rickandmortyapi.com/api/character"
+  const {data,loading} = useFetch(apiUrl) 
   console.log(data);
   return (
     <>
       <div className="characterCard">
-        {data &&(
+        {data && data.results && (
           <div>
-            <CharacterCard character={data}/>
+            {data.results.map((character) => (
+              <CharacterCard character={character}/>
+            ))}
+            
           </div>
           
         
